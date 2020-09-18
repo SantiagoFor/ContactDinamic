@@ -1,0 +1,50 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contactos</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script src="localStorage.js">
+        window.onload = actualizarDatos();
+    </script>
+</head>
+<body>
+    <center>
+        
+        
+            <h2>Contactos</h2>
+            <button type="button" onclick="actualizarDatos()">
+                Cargar Contactos
+            </button>
+
+        <div id="pagina">
+            <table>
+                <thead>
+                    <tr>
+                        <th >
+                            Buscar:
+                            <input type="text" placeholder="busqueda" id="busqueda" name="busqueda">
+                            <input type="submit" value="Buscar" onclick="actualizarDatos()">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <div id="contactos"></div>
+                    </tr>
+                    <tr>
+                        <div id="agregar"></div>
+                
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+<button type="button" onclick="nuevo()">
+    nuevo
+</button>
+       
+        
+    </div> 
+</center>
+</body>
+</html>

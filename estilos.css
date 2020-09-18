@@ -1,0 +1,31 @@
+table{
+    border: solid 1px #155263;
+    border-radius: 5%;
+    margin-top: 2%;
+    background-color: #155263;
+    color:white;
+    padding: 10px 10px 10px 10px;
+    }
+    #buscar{
+        margin:2% 2% 2% 2%;
+        border-radius: 27%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border: solid 1px #155263;
+    }
+    th, td,thead{
+        border: solid 1px #155263;
+    }
+    input{
+        border-radius: 5%;
+    }
+    p{
+        border-radius:30%;
+        background-color: #FFC93C;
+        color:black;
+    }
+    .busqueda{
+        margin-top: 10px;
+        color: white;
+        background-color: #155263 ;
+    }
