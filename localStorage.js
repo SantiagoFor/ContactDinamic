@@ -42,13 +42,6 @@
         actualizarDatos();
     }
     function editar(dato){
-        //if(dato==document.getElementById(dato).value){
-            //const nombre = dato;
-        //}else{
-           // const nombre =document.getElementById(dato).value;
-          //  localStorage.removeItem(dato);
-        //    console.log(nombre);
-       // }
        const nombre = dato;
         const celular = document.getElementById("celular".concat(dato)).value;
         const direccion = document.getElementById("direccion".concat(dato)).value;
@@ -75,10 +68,11 @@
                             <tr>
                                 <th>
                                     Nombre:<input type="text" value="${key}" id="${key}" name="${key}"><br>
-                                    Celular:<input type="text" value="${datos.celular}" id="celular${key}">
-                                    <br>
                                     Direccion:<input type="text" value="${datos.direccion}" id="direccion${key}">
                                     <br>
+                                    Celular:<input type="text" value="${datos.celular}" id="celular${key}">
+                                    <br>
+                                   
                                 </th>
                                 <th>
                                     <button type="button" onclick="eliminarDato('${key}')"> Eliminar</button><br>
@@ -101,10 +95,11 @@
                         <tr>
                             <th>
                                 Nombre:<input type="text" value="${key}" id="${key}" name="${key}"><br>
-                                Celular:<input type="text" value="${datos.celular}" id="celular${key}">
-                                <br>
                                 Direccion:<input type="text" value="${datos.direccion}" id="direccion${key}">
                                 <br>
+                                Celular:<input type="text" value="${datos.celular}" id="celular${key}">
+                                <br>
+                                
                             </th>
                             <th>
                                 <button type="button" onclick="eliminarDato('${key}')"> Eliminar</button><br>
