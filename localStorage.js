@@ -1,7 +1,7 @@
     window.onload= cargaDatos();
     function nuevo(){
         let formulario=`
-        <div class="card border-dark mb-12" style="margin: 10px 10px 10px 10px;">
+        <div class="card border-dark mb-12" style="margin-top: 10px">
             <div class="card-body">           
                 <form>
                     <div class="form-row">
@@ -88,7 +88,7 @@
                 let datos = localStorage.getItem(key);
                 datos = JSON.parse(datos);
                 elementos += `
-                <div class="card border-dark mb-12" style="margin: 10px 10px 10px 10px;">
+                <div class="card border-dark mb-12" style="margin-top: 10px">
                     <div class="card-body">
                         <form>
                             <div class="form-row">
@@ -132,7 +132,7 @@
                         resultados=1;
                         console.log("Encontrado");
                         elementos += `
-                        <div class="card border-dark mb-12" style="margin: 10px 10px 10px 10px;">
+                        <div class="card border-dark mb-12" style="margin-top: 10px">
                             <div class="card-body">
                                 <form>
                                     <div class="form-row">
