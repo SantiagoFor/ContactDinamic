@@ -26,6 +26,15 @@
 
     document.getElementById('agregar').innerHTML = formulario;
     }
+    function showFilters(){
+        let input =`
+        <div class="input-group mb-3 rounded-pill">
+            <input type="text" class="form-control rounded-pill" placeholder="Celular" id="buscaCelular" name="buscaCelular">
+            <input type="text" class="form-control rounded-pill" placeholder="Direccion" id="buscaDireccion" name="buscaDireccion">                               
+        </div>
+    `;
+    document.getElementById('filtros').innerHTML = input;
+    }
     function validate(){
         var nombre=document.getElementById("nombre").value;
         var celular=document.getElementById("celular").value;
@@ -119,6 +128,8 @@
         let elementos = "";
         let mensage = "";
         campobusqueda = document.getElementById("busqueda").value.toUpperCase();
+        campobuscacelular = document.getElementById("buscaCelular").value;
+        campobuscaDireccion = document.getElementById("buscaDireccion").value.toUpperCase();
         if (localStorage.length === 0) {
             elementos += 'Sin Contactos';
         } else {
@@ -126,10 +137,12 @@
                 for (let i = 0; i <= localStorage.length - 1; i++) {
                     const key = localStorage.key(i);
                     let datos = localStorage.getItem(key);
+                    let data = localStorage.getItem(key);
+                    console.log();
                     datos = JSON.parse(datos);
                     
-                    if(0<=key.indexOf(campobusqueda)){
-                        resultados=1;
+                    if(0<=key.indexOf(campobusqueda) && 0<=data.indexOf(campobuscacelular) && 0<=data.indexOf(campobuscaDireccion)){
+                        resultados=1+resultados;
                         console.log("Encontrado");
                         elementos += `
                         <div class="card border-dark mb-12" style="margin-top: 10px">
@@ -155,14 +168,20 @@
                             </div>   
                         </div>
                     `;
+                    
                     document.getElementById('contactos').innerHTML = elementos;
                     }
-                }
+                    
+
+                }alert("Encontramos "+resultados+" resultados");
                 if(resultados===0){
                     alert("No encontramos lo que buscabas");
                     cargaDatos();
                  }
                 document.getElementById("busqueda").value = "";
+                document.getElementById("buscaCelular").value = "";
+                document.getElementById("buscaDireccion").value = "";
+                document.getElementById('filtros').innerHTML = "";
         }
             
     }
