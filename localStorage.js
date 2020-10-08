@@ -19,11 +19,8 @@
                 </form>
                             <button type="button" class="offset-3  btn btn-sm btn-info"onclick="validate()">Guardar</button>
                             <button type="button" class="btn btn-sm btn-danger"onclick="cancelar()">Cancelar</button>
-                
-            </div>
-            
+            </div>  
         </div>`;
-
     document.getElementById('agregar').innerHTML = formulario;
     }
     function showFilters(){
@@ -62,7 +59,6 @@
         const datos = {
             'celular': celular,
             'direccion': direccion
-            
         };
         localStorage.setItem(nombre, JSON.stringify(datos));
         document.getElementById("nombre").value = "";
@@ -127,9 +123,16 @@
     function Buscar() {
         let elementos = "";
         let mensage = "";
-        campobusqueda = document.getElementById("busqueda").value.toUpperCase();
-        campobuscacelular = document.getElementById("buscaCelular").value;
-        campobuscaDireccion = document.getElementById("buscaDireccion").value.toUpperCase();
+        campobuscabusqueda = "";
+        campobuscacelular = "";
+        campobuscaDireccion = "";
+        if(document.getElementById("busqueda")!=null){
+            campobusqueda = document.getElementById("busqueda").value.toUpperCase();
+        }
+        if(document.getElementById("buscaDireccion")!=null){
+            campobuscacelular = document.getElementById("buscaCelular").value;
+            campobuscaDireccion = document.getElementById("buscaDireccion").value.toUpperCase();
+        }
         if (localStorage.length === 0) {
             elementos += 'Sin Contactos';
         } else {
@@ -139,8 +142,7 @@
                     let datos = localStorage.getItem(key);
                     let data = localStorage.getItem(key);
                     console.log();
-                    datos = JSON.parse(datos);
-                    
+                    datos = JSON.parse(datos);             
                     if(0<=key.indexOf(campobusqueda) && 0<=data.indexOf(campobuscacelular) && 0<=data.indexOf(campobuscaDireccion)){
                         resultados=1+resultados;
                         console.log("Encontrado");
@@ -168,22 +170,18 @@
                             </div>   
                         </div>
                     `;
-                    
                     document.getElementById('contactos').innerHTML = elementos;
                     }
-                    
-
-                }alert("Encontramos "+resultados+" resultados");
+                }
                 if(resultados===0){
                     alert("No encontramos lo que buscabas");
                     cargaDatos();
+                 }else{
+                    alert("Encontramos "+resultados+" resultados");
                  }
-                document.getElementById("busqueda").value = "";
-                document.getElementById("buscaCelular").value = "";
-                document.getElementById("buscaDireccion").value = "";
+                document.getElementById("busqueda").value = null;
                 document.getElementById('filtros').innerHTML = "";
         }
-            
     }
 
 
