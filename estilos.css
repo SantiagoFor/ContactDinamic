@@ -1,36 +1,42 @@
-table{
-    border: solid 1px #155263;
-    border-radius: 5%;
-    margin-top: 2%;
-    background-color: #155263;
-    color:white;
-    padding: 10px 10px 10px 10px;
-    }
-    #buscar{
-        margin:2% 2% 2% 2%;
-        border-radius: 27%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        border: solid 1px #155263;
-    }
-    th, td,thead{
-        border: solid 1px #155263;
-    }
-    input{
-        border-radius: 5%;
-    }
-    p{
-        border-radius:30%;
-        background-color: #FFC93C;
-        color:black;
-    }
-    .busqueda{
-        margin-top: 10px;
-        color: white;
-        background-color: #155263 ;
-    }
-    button{
-        background-color: #E96D38;
-        color: white;
-    }
-    
+#map {
+    height: 700px;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.targeta {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/*#mensaje {
+        margin-top: 20px;
+        position: fixed;
+        width: 33%;
+        bottom: 0;
+        right: 0;
+}*/
+
+#seccion1 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#seccion2 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#mapa {
+    position: fixed;
+    bottom: 0;
+    height: 98%;
+    width: 33%;
+    right: 16%;
+}
+
+.row {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
